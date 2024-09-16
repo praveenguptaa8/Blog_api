@@ -43,6 +43,7 @@ app.get('/blogs/:id', (req,res)=>{
 app.put('/blogs/:id', (req,res)=>{
     const result = data.find((blog)=>blog.id==req.params.id);
     result.title = req.body.title;
+    result.description = req.body.content;
     res.status(203).json({
         success: true
     })
